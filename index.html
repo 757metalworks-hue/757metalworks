@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>757 Metal Works | Custom Fabrication & Mobile Welding — Hampton Roads, VA</title>
+<meta name="description" content="Custom metal fabrication in Hampton Roads VA — gates, handrails, deck railings, and aluminum builds made to order. Plus mobile welding & on-site repairs. Call 757-285-2438.">
+<meta name="keywords" content="custom metal fabrication Hampton Roads, aluminum gates Virginia Beach, custom handrails Norfolk, deck railings Chesapeake, mobile welding Suffolk, metal fabrication Newport News">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png" sizes="64x64">
+<link rel="apple-touch-icon" href="favicon.png">
+</head>
+<body>
+<style>
+  /* ─── RESET & BASE ─── */
+  #mw-root *, #mw-root *::before, #mw-root *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  #mw-root {
+    --steel: #1a1a1a;
+    --steel-mid: #2c2c2c;
+    --steel-light: #3d3d3d;
+    --accent: #e8a832;
+    --accent-dim: #c48a1e;
+    --smoke: #f0ede8;
+    --text-light: #b0ada8;
+    --text-mid: #7a7774;
+    --white: #ffffff;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    font-family: var(--font-body);
+    background: var(--steel);
+    color: var(--smoke);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #mw-root img { display: block; max-width: 100%; }
+
+  /* ─── NAV (sticky, works inside Wix page flow) ─── */
+  #mw-root nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    background: rgba(26,26,26,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(232,168,50,0.15);
+    transition: padding 0.3s;
+  }
+  #mw-root nav.scrolled { padding: 12px 40px; }
+
+  #mw-root .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-decoration: none;
+  }
+  #mw-root .nav-logo span { color: var(--accent); }
+
+  #mw-root .nav-links { display: flex; gap: 32px; list-style: none; }
+  #mw-root .nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s;
+  }
+  #mw-root .nav-links a::after {
+    content: '';
+    position: absolute; bottom: -6px; left: 0;
+    width: 0; height: 2px;
+    background: var(--accent);
+    transition: width 0.3s;
+  }
+  #mw-root .nav-links a:hover { color: var(--accent); }
+  #mw-root .nav-links a:hover::after { width: 100%; }
+
+  #mw-root .nav-cta {
+    background: var(--accent);
+    color: var(--steel);
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  #mw-root .nav-cta:hover { background: var(--accent-dim); transform: scale(1.03); }
+
+  /* ─── HAMBURGER ─── */
+  #mw-root .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 101; }
+  #mw-root .hamburger span { width: 26px; height: 2px; background: var(--accent); transition: 0.3s; }
+
+  /* ─── HERO ─── */
+  #mw-root .hero {
+    position: relative;
+    height: 100vh; min-height: 600px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    background: var(--steel);
+    overflow: hidden;
+  }
+  #mw-root .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(232,168,50,0.07) 0%, transparent 70%),
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.015) 2px, rgba(255,255,255,0.015) 4px);
+    z-index: 1;
+  }
+  #mw-root .hero-content { position: relative; z-index: 2; padding: 0 24px; }
+  #mw-root .hero-tag {
+    display: inline-block;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 24px;
+    border: 1px solid rgba(232,168,50,0.3);
+    padding: 6px 16px; border-radius: 3px;
+  }
+  #mw-root .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3.2rem, 10vw, 7.5rem);
+    line-height: 0.95; color: var(--white);
+    letter-spacing: 3px; margin-bottom: 28px;
+  }
+  #mw-root .hero h1 .line2 { color: var(--accent); }
+  #mw-root .hero-sub {
+    font-size: 1rem; font-weight: 300; color: var(--text-light);
+    max-width: 520px; margin: 0 auto 40px; line-height: 1.7;
+  }
+  #mw-root .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  #mw-root .btn-primary {
+    background: var(--accent); color: var(--steel);
+    padding: 14px 32px; border-radius: 4px;
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 20px rgba(232,168,50,0.25);
+  }
+  #mw-root .btn-primary:hover {
+    background: var(--accent-dim); transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(232,168,50,0.35);
+  }
+  #mw-root .btn-outline {
+    border: 1px solid rgba(255,255,255,0.25); color: var(--smoke);
+    padding: 14px 32px; border-radius: 4px;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  }
+  #mw-root .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  #mw-root .hero-corner {
+    position: absolute; width: 60px; height: 60px;
+    border-color: var(--accent); border-style: solid;
+    opacity: 0.35; z-index: 2;
+  }
+  #mw-root .hero-corner.tl { top: 14%; left: 8%; border-width: 2px 0 0 2px; }
+  #mw-root .hero-corner.br { bottom: 14%; right: 8%; border-width: 0 2px 2px 0; }
+
+  /* ─── STATS BAR ─── */
+  #mw-root .stats-bar {
+    background: var(--steel-mid);
+    border-top: 1px solid rgba(232,168,50,0.15);
+    border-bottom: 1px solid rgba(232,168,50,0.15);
+    padding: 28px 40px;
+    display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+  }
+  #mw-root .stat { text-align: center; }
+  #mw-root .stat-num { font-family: var(--font-display); font-size: 2.2rem; color: var(--accent); letter-spacing: 2px; }
+  #mw-root .stat-label { font-size: 0.65rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-mid); margin-top: 4px; }
+
+  /* ─── SECTIONS ─── */
+  #mw-root section { padding: 100px 40px; }
+  #mw-root .section-label { font-size: 0.65rem; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  #mw-root .section-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); color: var(--white); letter-spacing: 2px; margin-bottom: 16px; line-height: 1.1; }
+  #mw-root .section-desc { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; max-width: 520px; font-weight: 300; }
+  #mw-root .inner { max-width: 1140px; margin: 0 auto; }
+
+  /* ─── SERVICES ─── */
+  #mw-root #services { background: var(--steel); }
+  #mw-root .services-header { text-align: center; margin-bottom: 64px; }
+  #mw-root .services-header .section-desc { margin: 0 auto; }
+  #mw-root .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+  #mw-root .service-card {
+    background: var(--steel-mid); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px; overflow: hidden; transition: transform 0.3s, border-color 0.3s;
+  }
+  #mw-root .service-card:hover { transform: translateY(-4px); border-color: rgba(232,168,50,0.3); }
+  #mw-root .service-img { width: 100%; height: 180px; object-fit: cover; filter: brightness(0.75); transition: filter 0.3s; }
+  #mw-root .service-card:hover .service-img { filter: brightness(0.9); }
+  #mw-root .service-info { padding: 24px; }
+  #mw-root .service-info h3 { font-family: var(--font-display); font-size: 1.25rem; letter-spacing: 1.5px; color: var(--white); margin-bottom: 10px; }
+  #mw-root .service-info p { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; font-weight: 300; }
+  #mw-root .service-cta {
+    display: inline-block; margin-top: 14px;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--accent); text-decoration: none;
+    border-bottom: 1px solid rgba(232,168,50,0.4); padding-bottom: 2px;
+    transition: border-color 0.2s;
+  }
+  #mw-root .service-cta:hover { border-color: var(--accent); }
+
+  /* ─── TESTIMONIAL CAROUSEL ─── */
+  #mw-root #testimonial { background: var(--steel); text-align: center; }
+  #mw-root .carousel-wrapper { overflow: hidden; max-width: 720px; margin: 0 auto; }
+  #mw-root .carousel-track { display: flex; transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
+  #mw-root .carousel-slide { min-width: 100%; padding: 0 12px; }
+  #mw-root .carousel-slide .stars { color: var(--accent); font-size: 1rem; margin-bottom: 20px; letter-spacing: 3px; }
+  #mw-root .carousel-slide .testimonial-quote { font-size: 1.05rem; font-weight: 300; color: var(--text-light); line-height: 1.8; margin-bottom: 20px; font-style: italic; }
+  #mw-root .carousel-slide .testimonial-quote .highlight { color: var(--smoke); font-weight: 400; }
+  #mw-root .carousel-slide .testimonial-author { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+  #mw-root .carousel-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 36px; }
+  #mw-root .carousel-btn {
+    background: var(--steel-mid); border: 1px solid rgba(255,255,255,0.12);
+    color: var(--smoke); width: 40px; height: 40px; border-radius: 50%;
+    font-size: 1.1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  #mw-root .carousel-btn:hover { border-color: var(--accent); background: rgba(232,168,50,0.1); }
+  #mw-root .carousel-dots { display: flex; gap: 8px; }
+  #mw-root .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--steel-light); cursor: pointer; transition: background 0.3s, transform 0.3s; }
+  #mw-root .carousel-dot.active { background: var(--accent); transform: scale(1.25); }
+
+  /* ─── ABOUT ─── */
+  #mw-root #about { background: var(--steel-mid); }
+  #mw-root .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  #mw-root .about-text .section-desc { margin-bottom: 36px; }
+  #mw-root .about-list { list-style: none; }
+  #mw-root .about-list li {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.85rem; color: var(--text-light); font-weight: 300;
+  }
+  #mw-root .about-list li:last-child { border-bottom: none; }
+  #mw-root .about-list .check {
+    flex-shrink: 0; width: 20px; height: 20px;
+    background: rgba(232,168,50,0.12); border: 1px solid var(--accent);
+    border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    color: var(--accent); font-size: 0.7rem; margin-top: 1px;
+  }
+  #mw-root .about-visual-inner {
+    width: 100%; aspect-ratio: 4/3; background: var(--steel);
+    border-radius: 8px; border: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px;
+  }
+  #mw-root .about-visual-inner .big-num { font-family: var(--font-display); font-size: 6rem; color: var(--accent); line-height: 1; }
+  #mw-root .about-visual-inner .big-label { font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-mid); }
+
+  /* ─── GALLERY ─── */
+  #mw-root #gallery { background: var(--steel-mid); }
+  #mw-root .gallery-header { text-align: center; margin-bottom: 48px; }
+  #mw-root .gallery-header .section-desc { margin: 0 auto; }
+  #mw-root .gallery-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+  #mw-root .gallery-item {
+    aspect-ratio: 1; background: var(--steel); border-radius: 6px;
+    overflow: hidden; border: 1px solid rgba(255,255,255,0.06); transition: transform 0.3s;
+  }
+  #mw-root .gallery-item:hover { transform: scale(1.03); }
+  #mw-root .gallery-item .placeholder {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-mid); font-size: 0.65rem; letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--steel) 0%, var(--steel-light) 100%);
+  }
+
+  /* ─── URGENCY STRIP ─── */
+  #mw-root .urgency-strip {
+    background: linear-gradient(135deg, #1f1a0e 0%, #2a220f 100%);
+    border-top: 1px solid rgba(232,168,50,0.2);
+    border-bottom: 1px solid rgba(232,168,50,0.2);
+    padding: 48px 40px;
+  }
+  #mw-root .urgency-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  #mw-root .urgency-text h3 { font-family: var(--font-display); font-size: 1.7rem; color: var(--white); letter-spacing: 2px; margin-bottom: 6px; }
+  #mw-root .urgency-text p { font-size: 0.82rem; color: var(--text-light); font-weight: 300; }
+  #mw-root .urgency-text p strong { color: var(--accent); font-weight: 600; }
+  #mw-root .urgency-btn {
+    flex-shrink: 0; background: var(--accent); color: var(--steel);
+    padding: 15px 32px; border-radius: 5px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; text-decoration: none; white-space: nowrap;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 18px rgba(232,168,50,0.3);
+  }
+  #mw-root .urgency-btn:hover { background: var(--accent-dim); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(232,168,50,0.4); }
+
+  /* ─── CONTACT ─── */
+  #mw-root #contact { background: var(--steel); }
+  #mw-root .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+  #mw-root .contact-info .section-desc { margin-bottom: 40px; }
+  #mw-root .contact-detail { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; }
+  #mw-root .contact-icon {
+    width: 42px; height: 42px;
+    background: rgba(232,168,50,0.1); border: 1px solid rgba(232,168,50,0.2);
+    border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; color: var(--accent); font-size: 1rem;
+  }
+  #mw-root .contact-detail-text h4 { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 4px; }
+  #mw-root .contact-detail-text p, #mw-root .contact-detail-text a { font-size: 0.92rem; color: var(--smoke); text-decoration: none; font-weight: 300; }
+  #mw-root .contact-detail-text a:hover { color: var(--accent); }
+
+  #mw-root .form-row { display: flex; gap: 16px; }
+  #mw-root .form-row .form-group { flex: 1; }
+  #mw-root .form-group { margin-bottom: 18px; }
+  #mw-root .form-group label { display: block; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-mid); margin-bottom: 8px; }
+  #mw-root .form-group input,
+  #mw-root .form-group textarea {
+    width: 100%; background: var(--steel-mid);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+    padding: 12px 16px; color: var(--smoke);
+    font-family: var(--font-body); font-size: 0.85rem; font-weight: 300;
+    outline: none; transition: border-color 0.2s;
+  }
+  #mw-root .form-group input:focus, #mw-root .form-group textarea:focus { border-color: var(--accent); }
+  #mw-root .form-group textarea { resize: vertical; min-height: 110px; }
+
+  #mw-root .form-submit {
+    width: 100%; background: var(--accent); color: var(--steel);
+    border: none; padding: 14px; border-radius: 6px;
+    font-family: var(--font-body); font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; cursor: pointer;
+    transition: background 0.2s, transform 0.15s; margin-top: 6px;
+  }
+  #mw-root .form-submit:hover { background: var(--accent-dim); transform: translateY(-1px); }
+  #mw-root .form-submit.pulse { animation: mw-btn-pulse 0.6s ease; }
+  @keyframes mw-btn-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(232,168,50,0.5); }
+    50% { box-shadow: 0 0 0 10px rgba(232,168,50,0); }
+    100% { box-shadow: 0 0 0 0 rgba(232,168,50,0); }
+  }
+
+  #mw-root .trust-badges { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 22px; }
+  #mw-root .trust-badge { display: flex; align-items: center; gap: 6px; font-size: 0.65rem; color: var(--text-mid); letter-spacing: 0.8px; }
+  #mw-root .trust-badge .badge-icon { color: var(--accent); font-size: 0.75rem; }
+
+  #mw-root .form-success { display: none; text-align: center; padding: 40px 24px; }
+  #mw-root .form-success.show { display: block; }
+  #mw-root .form-success .success-icon {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(232,168,50,0.12); border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px; font-size: 1.6rem; color: var(--accent);
+  }
+  #mw-root .form-success h4 { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); letter-spacing: 1.5px; margin-bottom: 10px; }
+  #mw-root .form-success p { font-size: 0.82rem; color: var(--text-light); font-weight: 300; line-height: 1.6; max-width: 340px; margin: 0 auto 24px; }
+
+  /* ─── FOOTER ─── */
+  #mw-root footer { background: #111; border-top: 1px solid rgba(255,255,255,0.06); padding: 48px 40px 28px; }
+  #mw-root .footer-inner { max-width: 1140px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+  #mw-root .footer-logo { font-family: var(--font-display); font-size: 1.3rem; color: var(--white); letter-spacing: 2px; }
+  #mw-root .footer-logo span { color: var(--accent); }
+  #mw-root .footer-copy { font-size: 0.7rem; color: var(--text-mid); letter-spacing: 1px; }
+  #mw-root .footer-socials { display: flex; gap: 12px; }
+  #mw-root .footer-socials a {
+    width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    color: var(--text-mid); text-decoration: none; font-size: 0.85rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  #mw-root .footer-socials a:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ─── MOBILE CALL BAR (fixed within the page) ─── */
+  #mw-root .mobile-call-bar {
+    display: none; position: fixed; bottom: 0; left: 0; width: 100%; z-index: 9999;
+    background: var(--accent); box-shadow: 0 -3px 20px rgba(0,0,0,0.4);
+  }
+  #mw-root .mobile-call-bar a {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 16px; color: var(--steel); text-decoration: none;
+    font-family: var(--font-body); font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  #mw-root .mobile-call-bar .pulse-ring {
+    width: 22px; height: 22px; border-radius: 50%; background: var(--steel);
+    display: flex; align-items: center; justify-content: center; position: relative;
+  }
+  #mw-root .mobile-call-bar .pulse-ring::before {
+    content: ''; position: absolute; inset: -4px; border-radius: 50%;
+    border: 2px solid var(--steel); animation: mw-pulse-out 1.6s infinite;
+  }
+  #mw-root .mobile-call-bar .pulse-ring svg { width: 12px; height: 12px; fill: var(--accent); }
+  @keyframes mw-pulse-out {
+    0% { transform: scale(0.85); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  /* ─── EXIT INTENT POPUP ─── */
+  #mw-root .popup-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.7); z-index: 9998;
+    align-items: center; justify-content: center; padding: 24px;
+  }
+  #mw-root .popup-overlay.open { display: flex; }
+  #mw-root .popup {
+    background: var(--steel-mid); border: 1px solid rgba(232,168,50,0.25);
+    border-radius: 12px; max-width: 460px; width: 100%;
+    padding: 44px 36px 36px; position: relative; text-align: center;
+    animation: mw-popup-in 0.25s ease;
+  }
+  @keyframes mw-popup-in {
+    from { transform: translateY(30px) scale(0.96); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+  }
+  #mw-root .popup-close {
+    position: absolute; top: 14px; right: 18px;
+    background: none; border: none; color: var(--text-mid);
+    font-size: 1.3rem; cursor: pointer; transition: color 0.2s;
+  }
+  #mw-root .popup-close:hover { color: var(--accent); }
+  #mw-root .popup-icon { font-size: 2.2rem; margin-bottom: 16px; }
+  #mw-root .popup h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--white); letter-spacing: 1.5px; margin-bottom: 10px; }
+  #mw-root .popup p { font-size: 0.82rem; color: var(--text-light); line-height: 1.6; font-weight: 300; margin-bottom: 24px; }
+  #mw-root .popup .popup-or { display: block; font-size: 0.65rem; color: var(--text-mid); letter-spacing: 1.5px; margin: 14px 0; }
+
+  /* ─── MOBILE NAV OVERLAY ─── */
+  #mw-root .mobile-nav {
+    display: none; position: fixed; inset: 0;
+    background: var(--steel); z-index: 9997;
+    flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+  }
+  #mw-root .mobile-nav.open { display: flex; }
+  #mw-root .mobile-nav a { font-family: var(--font-display); font-size: 2rem; color: var(--white); text-decoration: none; letter-spacing: 3px; transition: color 0.2s; }
+  #mw-root .mobile-nav a:hover { color: var(--accent); }
+  #mw-root .mobile-nav .close-btn {
+    position: absolute; top: 24px; right: 40px;
+    font-size: 1.8rem; color: var(--accent); cursor: pointer;
+    background: none; border: none;
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  #mw-root .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  #mw-root .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── HOW IT WORKS ─── */
+  #mw-root .how-it-works { background: var(--steel-mid); }
+  #mw-root .how-header { text-align: center; margin-bottom: 56px; }
+  #mw-root .how-header .section-desc { margin: 0 auto; }
+  #mw-root .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; max-width: 960px; margin: 0 auto; }
+  #mw-root .how-step {
+    text-align: center; position: relative; padding: 0 12px;
+  }
+  #mw-root .how-step-num {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: rgba(232,168,50,0.1); border: 2px solid var(--accent);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 22px;
+    font-family: var(--font-display); font-size: 1.6rem; color: var(--accent); letter-spacing: 1px;
+  }
+  #mw-root .how-step h4 {
+    font-family: var(--font-display); font-size: 1.15rem; color: var(--white);
+    letter-spacing: 1.5px; margin-bottom: 10px;
+  }
+  #mw-root .how-step p { font-size: 0.82rem; color: var(--text-light); line-height: 1.65; font-weight: 300; }
+  #mw-root .how-connector {
+    position: absolute; top: 32px; right: -16px;
+    width: 32px; height: 2px; background: var(--accent); opacity: 0.35;
+  }
+  #mw-root .how-step:last-child .how-connector { display: none; }
+  #mw-root .how-cta { text-align: center; margin-top: 48px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    #mw-root .about-grid, #mw-root .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    #mw-root .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    #mw-root .about-visual { order: -1; max-width: 360px; }
+  }
+  @media (max-width: 700px) {
+    #mw-root nav { padding: 16px 24px; }
+    #mw-root .nav-links, #mw-root .nav-cta { display: none; }
+    #mw-root .hamburger { display: flex; }
+    #mw-root section { padding: 72px 24px; }
+    #mw-root .hero { min-height: 520px; }
+    #mw-root .stats-bar { gap: 36px; padding: 24px; }
+    #mw-root .services-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    #mw-root .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    #mw-root .form-row { flex-direction: column; gap: 0; }
+    #mw-root .hero-corner { display: none; }
+    #mw-root footer { padding: 36px 24px 72px; }
+    #mw-root .footer-inner { flex-direction: column; text-align: center; }
+    #mw-root .mobile-call-bar { display: block; }
+    #mw-root #contact { padding-bottom: 100px; }
+    #mw-root .urgency-inner { text-align: center; justify-content: center; }
+    #mw-root .how-grid { grid-template-columns: 1fr; gap: 36px; max-width: 380px; }
+    #mw-root .how-connector { display: none !important; }
+  }
+</style>
+
+<!-- ALL CONTENT WRAPPED IN A SINGLE ROOT DIV -->
+<div id="mw-root">
+
+<!-- NAV -->
+<nav id="mw-navbar">
+  <a href="#" class="nav-logo" onclick="mwScroll('mw-hero'); return false;">757 <span>METAL WORKS</span></a>
+  <ul class="nav-links">
+    <li><a href="#" onclick="mwScroll('mw-services'); return false;">Services</a></li>
+    <li><a href="#" onclick="mwScroll('mw-howitworks'); return false;">How It Works</a></li>
+    <li><a href="#" onclick="mwScroll('mw-about'); return false;">About</a></li>
+    <li><a href="#" onclick="mwScroll('mw-gallery'); return false;">Gallery</a></li>
+    <li><a href="#" onclick="mwScroll('mw-contact'); return false;">Contact</a></li>
+  </ul>
+  <a href="tel:+17572852438" class="nav-cta">Call Now</a>
+  <div class="hamburger" onclick="document.getElementById('mw-mobileNav').classList.add('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mw-mobileNav">
+  <button class="close-btn" onclick="document.getElementById('mw-mobileNav').classList.remove('open')">&times;</button>
+  <a href="#" onclick="document.getElementById('mw-mobileNav').classList.remove('open'); mwScroll('mw-services'); return false;">Services</a>
+  <a href="#" onclick="document.getElementById('mw-mobileNav').classList.remove('open'); mwScroll('mw-howitworks'); return false;">How It Works</a>
+  <a href="#" onclick="document.getElementById('mw-mobileNav').classList.remove('open'); mwScroll('mw-about'); return false;">About</a>
+  <a href="#" onclick="document.getElementById('mw-mobileNav').classList.remove('open'); mwScroll('mw-gallery'); return false;">Gallery</a>
+  <a href="#" onclick="document.getElementById('mw-mobileNav').classList.remove('open'); mwScroll('mw-contact'); return false;">Contact</a>
+  <a href="tel:+17572852438" style="color: var(--accent);">757-285-2438</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="mw-hero">
+  <div class="hero-corner tl"></div>
+  <div class="hero-corner br"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Hampton Roads · Custom Fabrication · On-Site</div>
+    <h1>BUILT TO ORDER.<br><span class="line2">WELDED TO LAST.</span></h1>
+    <p class="hero-sub">Custom metal fabrication — gates, handrails, aluminum builds — plus mobile welding and on-site repairs. We come to you, across all of Hampton Roads.</p>
+    <div class="hero-btns">
+      <a href="tel:+17572852438" class="btn-primary">☎ Call 757-285-2438</a>
+      <a href="#" class="btn-outline" onclick="mwScroll('mw-contact'); return false;">Request a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">30+</div><div class="stat-label">5-Star Reviews</div></div>
+  <div class="stat"><div class="stat-num">24/7</div><div class="stat-label">Availability</div></div>
+  <div class="stat"><div class="stat-num">757</div><div class="stat-label">Area Code · Local Business</div></div>
+  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">On-Site Service</div></div>
+</div>
+
+<!-- SERVICES -->
+<section id="mw-services">
+  <div class="inner">
+    <div class="services-header reveal">
+      <div class="section-label">What We Build & Repair</div>
+      <h2 class="section-title">SERVICES</h2>
+      <p class="section-desc">Custom fabrication is our bread and butter — gates, handrails, aluminum builds, and one-off projects. Plus fast on-site welding and repairs when something needs fixing.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <img class="service-img" src="img/aluminum-fab.jpg" alt="Custom aluminum fabrication — gates, handrails, railings">
+        <div class="service-info">
+          <h3>CUSTOM FABRICATION</h3>
+          <p>Gates, handrails, deck railings, brackets, frames, and one-off aluminum or steel builds — designed and welded to your exact spec.</p>
+          <a href="#" class="service-cta" onclick="mwScroll('mw-contact'); return false;">Get a Free Quote →</a>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <img class="service-img" src="img/marine-welding.jpg" alt="Marine welding — boat repairs, T-tops, hull work">
+        <div class="service-info">
+          <h3>MARINE & BOAT WORK</h3>
+          <p>Aluminum hull repairs, T-tops, rod holders, brackets, and stainless steel boat projects. Quality work that holds up on the water.</p>
+          <a href="#" class="service-cta" onclick="mwScroll('mw-contact'); return false;">Get a Free Quote →</a>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <img class="service-img" src="img/mobile-welding.jpg" alt="Mobile welding service — on-site repairs">
+        <div class="service-info">
+          <h3>MOBILE WELDING</h3>
+          <p>We bring the shop to your job site. Trailer repairs, structural welds, and emergency fixes — same-day response across Hampton Roads.</p>
+          <a href="tel:+17572852438" class="service-cta">☎ Call for Same-Day →</a>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <img class="service-img" src="img/heavy-equipment.jpg" alt="Heavy equipment repair and welding">
+        <div class="service-info">
+          <h3>EQUIPMENT REPAIR</h3>
+          <p>Emergency welding repairs for commercial, landscaping, and farm equipment. Every hour of downtime costs you — we move fast.</p>
+          <a href="tel:+17572852438" class="service-cta">☎ Call for Same-Day →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS CAROUSEL -->
+<section id="mw-testimonial">
+  <div class="inner">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">What People Say</div>
+      <h2 class="section-title" style="margin-bottom:40px;">TRUSTED BY HAMPTON ROADS</h2>
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="mw-carouselTrack">
+          <div class="carousel-slide">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p class="testimonial-quote"><span class="highlight">"Had a problem with one of our forklifts, placed a call Monday morning — they were at my location that day and came back the next day, made the repair and had us back up and running within 4 hours."</span> 757 Metal Works is the one and only company I will call if I need metal work done. 100% satisfied.</p>
+            <div class="testimonial-author">— Jeff Logan · Google Review</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p class="testimonial-quote"><span class="highlight">"Aiden and Ice came out within two hours of my call for an emergency trailer repair."</span> They were professional, respectful, and offered a great price. I'll be going to them for all my future metal work needs.</p>
+            <div class="testimonial-author">— Dia · Google Review</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p class="testimonial-quote"><span class="highlight">"Super easy to work with, great communication, and the work was done right the first time."</span> You can tell they actually care about doing a good job. Highly recommend!</p>
+            <div class="testimonial-author">— Sonny Rawal · Google Review</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p class="testimonial-quote"><span class="highlight">"I needed some welding work done quick so I called 757 Metal and within an hour a professional welder was doing my repairs."</span> Highly recommended!</p>
+            <div class="testimonial-author">— Donsta Strand · Google Review</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p class="testimonial-quote"><span class="highlight">"They are honest about their work and can turn a random vision into reality."</span> Would come back if I need more custom fab work.</p>
+            <div class="testimonial-author">— Bryant Lammers · Google Review</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p class="testimonial-quote"><span class="highlight">"Quality small boat stainless steel project at an affordable price."</span> Aiden & Mike are nice to work with!</p>
+            <div class="testimonial-author">— Michael Weiss · Google Review</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p class="testimonial-quote"><span class="highlight">"These guys came out fast to do an on-site emergency repair to a piece of my equipment — saved me a lot of time and money and were in and out."</span> Highly recommend the Aidens!</p>
+            <div class="testimonial-author">— Zach Curtis · Google Review</div>
+          </div>
+          <div class="carousel-slide">
+            <div class="stars">★ ★ ★ ★ ★</div>
+            <p class="testimonial-quote"><span class="highlight">"I own a local tree service and was in need of some welding done — these guys knocked it out."</span> These guys are awesome. Will definitely be using them again.</p>
+            <div class="testimonial-author">— Brent Jackson · Google Review</div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn prev" onclick="mwMoveCarousel(-1)">&#8592;</button>
+        <div class="carousel-dots" id="mw-carouselDots"></div>
+        <button class="carousel-btn next" onclick="mwMoveCarousel(1)">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="mw-howitworks">
+  <div class="inner">
+    <div class="how-header reveal">
+      <div class="section-label">The Process</div>
+      <h2 class="section-title">HOW IT WORKS</h2>
+      <p class="section-desc">Getting a custom fab project started is easy. No blueprints needed — just tell us what you're thinking and we'll handle the rest.</p>
+    </div>
+    <div class="how-grid reveal">
+      <div class="how-step">
+        <div class="how-connector"></div>
+        <div class="how-step-num">01</div>
+        <h4>DESCRIBE YOUR PROJECT</h4>
+        <p>Call or fill out the form. Tell us what you need — a gate, handrails, a custom build, or a repair. Photos help but aren't required.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-connector"></div>
+        <div class="how-step-num">02</div>
+        <h4>WE QUOTE & DESIGN</h4>
+        <p>We'll come out to measure, talk through your vision, and give you a straight quote. No surprises, no hidden fees — just an honest price.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">03</div>
+        <h4>BUILT & INSTALLED</h4>
+        <p>We fabricate it, bring it to your site, and install it ourselves. From idea to finished product — done right, done fast.</p>
+      </div>
+    </div>
+    <div class="how-cta reveal">
+      <a href="#" class="btn-primary" onclick="mwScroll('mw-contact'); return false;">Start Your Project →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="mw-about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">CUSTOM WORK.<br>FAIR PRICES.<br>DONE RIGHT.</h2>
+        <p class="section-desc">757 Metal Works is a Hampton Roads fabrication and welding shop on wheels. We specialize in custom aluminum and steel builds — and we do the on-site welding and repairs too. If it's metal, we can build it or fix it.</p>
+        <ul class="about-list" style="margin-top:32px;">
+          <li><span class="check">✓</span> Custom fabrication from idea to finished product</li>
+          <li><span class="check">✓</span> Aluminum, steel, and stainless steel work</li>
+          <li><span class="check">✓</span> Fair, upfront pricing — no surprises</li>
+          <li><span class="check">✓</span> Fast response and same-day availability</li>
+          <li><span class="check">✓</span> 5.0 stars across 30+ Google reviews</li>
+        </ul>
+      </div>
+      <div class="about-visual reveal">
+        <div class="about-visual-inner">
+          <div class="big-num">30+</div>
+          <div class="big-label">5-Star Google Reviews</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="mw-gallery">
+  <div class="inner">
+    <div class="gallery-header reveal">
+      <div class="section-label">Project Photos</div>
+      <h2 class="section-title">OUR WORK</h2>
+      <p class="section-desc">Custom builds, repairs, and fabrication jobs from around Hampton Roads. Every project is one-of-a-kind.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item"><img src="img/gallery-1.jpg" alt="Project photo 1" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="gallery-item"><img src="img/gallery-2.jpg" alt="Project photo 2" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="gallery-item"><img src="img/gallery-3.jpg" alt="Project photo 3" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="gallery-item"><img src="img/gallery-4.jpg" alt="Project photo 4" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="gallery-item"><img src="img/gallery-5.jpg" alt="Project photo 5" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="gallery-item"><img src="img/gallery-6.jpg" alt="Project photo 6" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="gallery-item"><img src="img/gallery-7.jpg" alt="Project photo 7" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="gallery-item"><img src="img/gallery-8.jpg" alt="Project photo 8" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="gallery-item"><img src="img/gallery-9.jpg" alt="Project photo 9" style="width:100%;height:100%;object-fit:cover;"></div>
+      <div class="gallery-item"><img src="img/gallery-10.jpg" alt="Project photo 10" style="width:100%;height:100%;object-fit:cover;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY STRIP -->
+<div class="urgency-strip">
+  <div class="urgency-inner">
+    <div class="urgency-text">
+      <h3>READY TO START A PROJECT?</h3>
+      <p>Whether it's a <strong>custom fabrication build</strong> or an emergency repair — we respond fast and get it done. Same-day availability across Hampton Roads.</p>
+    </div>
+    <a href="tel:+17572852438" class="urgency-btn">☎ Call Now · 757-285-2438</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="mw-contact">
+  <div class="inner">
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">GET A FREE<br>QUOTE TODAY.</h2>
+        <p class="section-desc">Describe your project or repair and we'll get back to you fast — usually same day. Photos are helpful but not required.</p>
+        <div style="margin-top:40px;">
+          <div class="contact-detail">
+            <div class="contact-icon">☎</div>
+            <div class="contact-detail-text"><h4>Phone</h4><a href="tel:+17572852438">757-285-2438</a></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">◎</div>
+            <div class="contact-detail-text"><h4>Service Area</h4><p>Virginia Beach, Norfolk, Chesapeake, Suffolk, Newport News & surrounding areas</p></div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon">⏱</div>
+            <div class="contact-detail-text"><h4>Availability</h4><p>Available 7 days a week</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal" id="mw-contactForm">
+        <div class="form-group"><label>Name *</label><input type="text" id="mw-nameInput" name="name" placeholder="Your name"></div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone *</label><input type="tel" id="mw-phoneInput" name="phone" placeholder="(757) 000-0000"></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com"></div>
+        </div>
+        <div class="form-group"><label>Address</label><input type="text" name="address" placeholder="Job site or service address"></div>
+        <div class="form-group"><label>Describe Your Project *</label><textarea name="message" placeholder="What do you need built or repaired? (e.g. custom gate, deck handrails, trailer repair...)"></textarea></div>
+        <button class="form-submit" onclick="mwHandleSubmit()">Submit Request</button>
+        <div class="trust-badges" id="mw-trustBadges">
+          <span class="trust-badge"><span class="badge-icon">✓</span> Free Quote</span>
+          <span class="trust-badge"><span class="badge-icon">✓</span> No Obligation</span>
+          <span class="trust-badge"><span class="badge-icon">✓</span> Local & Trusted</span>
+          <span class="trust-badge"><span class="badge-icon">★</span> 30+ 5-Star Reviews</span>
+        </div>
+        <div class="form-success" id="mw-formSuccess">
+          <div class="success-icon">✓</div>
+          <h4>YOU'RE ALL SET</h4>
+          <p>We got your request. We'll be in touch fast — usually same day. If it's urgent, give us a call directly.</p>
+          <a href="tel:+17572852438" class="btn-primary" style="padding:12px 26px; font-size:0.68rem;">☎ Call 757-285-2438</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">757 <span>METAL WORKS</span></div>
+    <div class="footer-copy">© 2026 757 Metal Works. All rights reserved.</div>
+    <div class="footer-socials">
+      <a href="https://www.facebook.com/757MetalWorks" target="_blank" title="Facebook" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/757MetalWorks" target="_blank" title="Instagram" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE CALL BAR -->
+<div class="mobile-call-bar">
+  <a href="tel:+17572852438">
+    <span class="pulse-ring">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    </span>
+    Call Now · 757-285-2438
+  </a>
+</div>
+
+<!-- EXIT INTENT POPUP -->
+<div class="popup-overlay" id="mw-exitPopup">
+  <div class="popup">
+    <button class="popup-close" onclick="mwClosePopup()">&times;</button>
+    <div class="popup-icon">⚡</div>
+    <h3>BEFORE YOU GO</h3>
+    <p>Need welding or fabrication done? We're local, fast, and come straight to you. Get a <strong style="color:var(--accent);">free quote</strong> — no obligation.</p>
+    <a href="tel:+17572852438" class="btn-primary">☎ Call 757-285-2438</a>
+    <span class="popup-or">— or —</span>
+    <a href="#" class="btn-outline" onclick="mwClosePopup(); mwScroll('mw-contact'); return false;">Request a Quote</a>
+  </div>
+</div>
+
+</div><!-- end #mw-root -->
+
+<script>
+(function() {
+  // ─── SMOOTH SCROLL ───
+  window.mwScroll = function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var navH = document.getElementById('mw-navbar').offsetHeight;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  };
+
+  // ─── NAV SHRINK ON SCROLL ───
+  window.addEventListener('scroll', function() {
+    document.getElementById('mw-navbar').classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ─── SCROLL REVEAL ───
+  var reveals = document.querySelectorAll('#mw-root .reveal');
+  var revObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry, i) {
+      if (entry.isIntersecting) {
+        setTimeout(function() { entry.target.classList.add('visible'); }, i * 100);
+        revObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(function(el) { revObs.observe(el); });
+
+  // ─── CAROUSEL ───
+  var currentSlide = 0;
+  var track = document.getElementById('mw-carouselTrack');
+  var slides = track.querySelectorAll('.carousel-slide');
+  var totalSlides = slides.length;
+  var dotsEl = document.getElementById('mw-carouselDots');
+
+  for (var i = 0; i < totalSlides; i++) {
+    var dot = document.createElement('div');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    (function(idx) { dot.onclick = function() { mwGoToSlide(idx); }; })(i);
+    dotsEl.appendChild(dot);
+  }
+
+  function mwUpdateCarousel() {
+    track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+    document.querySelectorAll('#mw-root .carousel-dot').forEach(function(d, i) {
+      d.classList.toggle('active', i === currentSlide);
+    });
+  }
+
+  window.mwMoveCarousel = function(dir) {
+    currentSlide = (currentSlide + dir + totalSlides) % totalSlides;
+    mwUpdateCarousel();
+    resetAutoSlide();
+  };
+
+  function mwGoToSlide(i) { currentSlide = i; mwUpdateCarousel(); resetAutoSlide(); }
+
+  var autoSlide = setInterval(function() { window.mwMoveCarousel(1); }, 5000);
+  function resetAutoSlide() { clearInterval(autoSlide); autoSlide = setInterval(function() { window.mwMoveCarousel(1); }, 5000); }
+
+  // ─── FORM SUBMIT (Formspree) ───
+  window.mwHandleSubmit = function() {
+    var nameEl = document.getElementById('mw-nameInput');
+    var phoneEl = document.getElementById('mw-phoneInput');
+    var msgEl = document.querySelector('#mw-contactForm textarea');
+    var name = nameEl.value.trim();
+    var phone = phoneEl.value.trim();
+    var message = msgEl ? msgEl.value.trim() : '';
+
+    // Validate required fields
+    var valid = true;
+    if (!name) { nameEl.style.borderColor = '#e84848'; valid = false; }
+    if (!phone) { phoneEl.style.borderColor = '#e84848'; valid = false; }
+    if (!message) { msgEl.style.borderColor = '#e84848'; valid = false; }
+    if (!valid) {
+      setTimeout(function() {
+        nameEl.style.borderColor = '';
+        phoneEl.style.borderColor = '';
+        if (msgEl) msgEl.style.borderColor = '';
+      }, 2200);
+      return;
+    }
+
+    // Build FormData from all named inputs
+    var formData = new FormData();
+    var inputs = document.querySelectorAll('#mw-contactForm input[name], #mw-contactForm textarea[name]');
+    inputs.forEach(function(el) { formData.append(el.name, el.value); });
+
+    // Disable button while submitting
+    var btn = document.querySelector('#mw-contactForm .form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    // POST to Formspree
+    fetch('https://formspree.io/f/mnjzqdkz', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(res) {
+      if (res.ok) {
+        // Success — show confirmation
+        var form = document.getElementById('mw-contactForm');
+        form.querySelectorAll('.form-group, .form-row').forEach(function(el) { el.style.display = 'none'; });
+        btn.style.display = 'none';
+        document.getElementById('mw-trustBadges').style.display = 'none';
+        document.getElementById('mw-formSuccess').classList.add('show');
+      } else {
+        // Server error — let them call instead
+        btn.disabled = false;
+        btn.textContent = 'Submit Request';
+        alert('Something went wrong. Please call us at 757-285-2438 instead.');
+      }
+    }).catch(function() {
+      btn.disabled = false;
+      btn.textContent = 'Submit Request';
+      alert('Network error. Please call us at 757-285-2438 instead.');
+    });
+  };
+
+  // ─── EXIT INTENT ───
+  var exitFired = false;
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY < 5 && !exitFired) { exitFired = true; document.getElementById('mw-exitPopup').classList.add('open'); }
+  });
+  setTimeout(function() { if (!exitFired) { exitFired = true; document.getElementById('mw-exitPopup').classList.add('open'); } }, 25000);
+
+  window.mwClosePopup = function() { document.getElementById('mw-exitPopup').classList.remove('open'); };
+  document.getElementById('mw-exitPopup').addEventListener('click', function(e) { if (e.target === e.currentTarget) window.mwClosePopup(); });
+
+  // ─── FORM PULSE ───
+  var formInteracted = false;
+  document.querySelectorAll('#mw-contactForm input, #mw-contactForm textarea').forEach(function(input) {
+    input.addEventListener('focus', function() {
+      if (!formInteracted) {
+        formInteracted = true;
+        setTimeout(function() {
+          var btn = document.querySelector('#mw-contactForm .form-submit');
+          if (btn) { btn.classList.add('pulse'); setTimeout(function() { btn.classList.remove('pulse'); }, 600); }
+        }, 3000);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
